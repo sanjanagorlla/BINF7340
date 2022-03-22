@@ -74,6 +74,11 @@ binom.test(x=X, n =N, p=0.5, alternative = "less")
 
 
 ##  PROBLEM 2
+#  Suppose that the probability to reject a biological hypothesis by the results of a certain experiment is 0.05. This experiment is repeated 2000 times.
+# (a) How many rejections do you expect?
+# (b) What is the probability of less than 90 rejections?
+
+
 p = 0.05
 n = 2000
 # 2(a) Numbeer of  rejections to be expected
@@ -86,6 +91,9 @@ pbinom(89, size = 2000, prob = 0.05)
 
 
 ## PROBLEM 3 
+# For testing H0: μ=3 versus HA: μ>3, we considers a new α=0.1 level test which rejects when  falls between  and . 
+   #  (a) Use a Monte Carlo simulation to estimate the Type I error rate of this test when n=20. Do 10,000 simulation runs of data sets from the . Please show the R script for the simulation, and the R outputs for running the script. Provide your numerical estimate for the Type I error rate. Is this test valid (that is, is its Type I error rate same as the nominal α=0.1 level)? 
+   #  (b)  Should we use this new test in practice? Why or why not?  
 
 # 3(a)
 n= 20
@@ -109,6 +117,9 @@ power.sim+c(-1,0,1)*qnorm(0.975)*sqrt(power.sim*(1-power.sim)/10000)
 
 
 ## PROBLEM 4
+# On the Golub et al. (1999) data set, do Welch two-sample t-tests to compare every gene’s expression values in ALL group versus in AML group. 
+    # (a) Use Bonferroni and FDR adjustments both at 0.05 level. How many genes are differentially expressed according to these two criteria? 
+   #  (b) Find the gene names for the top three strongest differentially expressed genes (i.e., minimum p-values). Hint: the gene names are stored in golub.gnames.
 
 ## 4 (a)
 data(golub, package = "multtest")
