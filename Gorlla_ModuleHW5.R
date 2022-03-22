@@ -1,6 +1,11 @@
 # MODULE-5 
+
 ## problem 1
 ## numerical optimization of likelihood
+# A random sample of size 6 from the exp(λ) distribution results in observations:  
+#1.636, 0.374, 0.534, 3.015, 0.932, 0.179.
+# Find the MLE on this data set in two ways: by numerical optimization of the likelihood (please include R code) and by the analytic formula.
+
 observations<- c(1.636, 0.374, 0.534, 3.015, 0.932, 0.179);
 nloglik <- function(x,theta) -sum(dexp(x = x, rate = theta, log = TRUE))
 # minimizing nloglik using optimize() and extracting the values through minimum
@@ -17,6 +22,10 @@ ana_form_exp
 
 
 ### problem 2
+# A random sample X1, X2, ………., X53 follows chi-square distribution with m degree of freedom, has sample mean  and sample standard deviation . 
+# (a) Find the point estimator of m using the method of moments.
+# (b) Find a one-sided 90% lower confidence interval of m. 
+# Please provide the formulas and the derivations together with your numerical answer.
 # (a) 100.8
 # (b)
 # problem 2
@@ -25,6 +34,11 @@ ana_form_exp
 
 
 ## problem 3
+# On the Golub et al. (1999) data set, analyze the Zyxin gene expression data separately for the ALL and AML groups. 
+    # (a) Find the bootstrap 95% CIs for the mean and for the variance of the gene expression in each group separately.
+    # (b) Find the parametric 95% CIs for the mean and for the variance of the gene expression in each group separately. (You need to choose the appropriate approximate formula to use: z-interval, t-interval or chi-square interval.)
+   #  (c)  Find the bootstrap 95% CI for the median gene expression in both groups separately.
+    # (d)  Considering the CIs in parts (a)-(c), does the Zyxin gene express differently in ALL and AML patients?
 
 ######## 3(a)##########
 
@@ -182,6 +196,10 @@ quantile(boot.xbar,c(0.025,0.975)) #quantiles of bootstraped median
 
 
 # PROBLEM 4 
+# a) Write a R-script to conduct a Monte Carlo study for the coverage probabilities of the two CIs. That is, to generate nsim=1000 such data sets from the Poisson distribution. Check the proportion of the CIs that contains the true parameter λ.
+# (b) Run the Monte Carlo simulation for nsim=1000 runs, at three different parameter values: λ=0.1, λ=1 and λ=10. Report the coverage probabilities of these two CIs at each of the three parameter values.
+# (c) Considering your result in part (b), which one of these two CI formulas should you use in practice? Can you explain the pattern observed in (b)? 
+
 ## 4(a)
 MCsim <- function(nsim, lambda) {
   cov1<-cov2<-rep(NA,nsim) # create empty matrices to store data
