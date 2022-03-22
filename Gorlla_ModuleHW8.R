@@ -1,5 +1,12 @@
 # MODULE 8 HOMEWORK
 
+# PROBLEM 1
+# On the ALL data set, consider the ANOVA on the gene with the probe “109_at” expression values on B-cell patients in 5 groups: B, B1, B2, B3 and B4. 
+# (a) Conduct the one-way ANOVA. Do the disease stages affect the mean gene expression value? 
+# (b) From the linear model fits, find the mean gene expression value among B3 patients. Make sure you show the summary table in your submission.
+# (c) Which group’s mean gene expression value is different from that of group B?
+# (d) Use the pairwise comparisons at FDR=0.05 to find which group means are different. Show the output of your code. What is your conclusion?
+# (e) Check the ANOVA model assumptions with diagnostic tests? Do we need to apply robust ANOVA tests here? If yes, apply the appropriate tests and state your conclusion.
 
 ## PROBLEM 1(a)
 #load the package and the data set.
@@ -53,6 +60,11 @@ bptest(lm(y ~ ALLB01234$BT), studentize = FALSE) #test equal variances
 
 
 
+ # PROBLEM -2
+# Apply the nonparametric Kruskal-Wallis tests for every gene on the B-cell ALL patients in stage B, B1, B2, B3, B4 from the ALL data. 
+# (Hint: use the apply() function.)
+# (a) Use FDR adjustments at 0.05 level. How many genes are expressed different in some of the groups? 
+# (b) Find the probe names for the top five genes with smallest p-values. 
 
 ## PROBLEM 2 (a)
 data(ALL,package="ALL")
@@ -71,7 +83,13 @@ names(sort(p.adj)[1:5])
 # [1] "1389_at"   "38555_at"  "40268_at"  "1866_g_at" "40155_at" 
 
 
-
+                 
+                 
+# PROBLEM 3
+# On the ALL data set, we consider the ANOVA on the gene with the probe “38555_at” expression values on two factors. The first factor is the disease stages: B1, B2, B3 and B4 (we only take patients from those four stages). The second factor is the gender of the patient (stored in the variable ALL$sex). 
+# (a) Conduct the appropriate ANOVA analysis. Does any of the two factors affects the gene expression values? Are there interaction between the two factors?
+# (b) Check the ANOVA model assumption with diagnostic tests? Are any of the assumptions violated?
+                 
 ## PROBLEM 3 (a)
 
 library("ALL")
