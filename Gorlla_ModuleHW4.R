@@ -1,11 +1,23 @@
 # MODULE 4 HOMEWORK
 
 ## PROBLEM 1
+#Suppose that for certain microRNA of size 20 the probability of a purine is binomially distributed with probability 0.7. Say there are 100 such microRNAs,
+# each independent of the other.
+#Let Y denote the average number of purine in these microRNAs. Find the probability that Y is great than 15. Please give a theoretical calculation, do NOT
+# use Monte Carlo simulation to approximate. Show all the steps and formulas in your calculation.
+
 # P(15<X<=20)= P(X<=20)-P(X<=15)
 pnorm(20,mean=14,sd=sqrt(4.2)/sqrt(100))-pnorm(15,mean=14,sd=sqrt(4.2)/sqrt(100)) 
 # output : [1] 5.317746e-07
 
 ## PROBLEM 2
+# Two genes’ expression values follow a bivariate normal distribution. Let X and Y denote their expression values respectively. Also, assume that X has mean=9 and
+# variance=3.Y has mean=10 and variance=5. The covariance between X and Y is 2.
+# In a trial, 50 independent measurements of the expression values of the two genes are collected, We wish to find the probability
+# , i.e., the probability that the sample mean for the second gene exceeds the sample mean of the first gene more than 0.5. 
+# Conduct a Monte Carlo simulation to approximate this probability, providing a 95% confidence interval for your estimation. 
+# Submit your R script for the Monte Carlo simulation, and a brief summary of the actual simulation results.
+
 #install and load the package
 install.packages("mvtnorm")
 library(mvtnorm)
@@ -51,6 +63,7 @@ Ey
 
 
 ## PROBLEM 4
+# f(x)=exp(-x)exp(-exp(-x))
 n <- 10000
 an <- sqrt(2*log(n)) - 0.5*(log(log(n))+log(4*pi))*(2*log(n))^(-1/2)
 bn <- (2*log(n))^(-1/2)
