@@ -1,6 +1,10 @@
 # MODULE 3 HOMEWORK
 
 # PROBLEM 2
+# A random variable X has pdf
+# Find P(X = 1).
+# Then find P ( -2 > X > 4) .
+# Give your answers to at least four decimal places.
 
 x = 1
 f.x <- function (x) (2^x/factorial(x)) * exp(-2)
@@ -16,6 +20,7 @@ sum(f_x(X_range))
 
    
 #PROBLEM 4
+
 # For Y following a binomial (n = 3, p = 0.25) distribution, compute the following: P(Y ≤ 2) =, E(Y) =, Var(Y) =
 set.Y<-c(0,1,2)
 sum(dbinom(set.Y,size=3,p=0.25))
@@ -35,6 +40,15 @@ VarX
 
 
 # PROBLEM 5
+# For X following a Chi-square distribution with degree of freedom m = 3,
+# compute the following:
+# P(1 < X < 4) =
+# E(X) =
+# Var(X) =
+# Also, use a Monte Carlo simulation with sample size n=100,000 to estimate P(1 < X < 4). What is your Monte Carlo estimate? Does it agrees with the answer
+# above?
+
+
 pchisq(4,df=3)-pchisq(1,df=3)
 # 0.5397878
 EX = 3 # mean of chi-square is m 
